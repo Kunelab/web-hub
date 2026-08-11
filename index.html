@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KuneLab: projects</title>
+    <meta
+      name="description"
+      content="Index of the projects built at KuneLab: Web Games party quizzes, the MaxReader RSVP reader, and the MaxKontroller Bluetooth remote."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0F10'/%3E%3Cpath d='M10 9h3v5l5-5h4l-6 6 6 8h-4l-5-6v6h-3z' fill='%23F47521'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="assets/css/hub.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+    <div class="shell">
+      <header class="rail">
+        <div class="rail__top">
+          <a class="mark" href="#top">
+            <span class="mark__glyph" aria-hidden="true">KL</span>
+            <span class="mark__name">KuneLab</span>
+          </a>
+        </div>
+
+        <nav class="rail__nav" aria-label="Projects">
+          <p class="rail__label" data-i18n="navIndex">Index</p>
+          <ol class="nav">
+            <li>
+              <a href="#web-games"
+                ><span class="nav__name" data-i18n="navGames">Web Games</span
+                ><span class="nav__kind" data-i18n="kindWeb">Web</span></a
+              >
+            </li>
+            <li>
+              <a href="#maxreader"
+                ><span class="nav__name">MaxReader</span
+                ><span class="nav__kind" data-i18n="kindAndroid"
+                  >Android</span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="#maxkontroller"
+                ><span class="nav__name">MaxKontroller</span
+                ><span class="nav__kind" data-i18n="kindAndroid2"
+                  >Android</span
+                ></a
+              >
+            </li>
+          </ol>
+
+          <p class="rail__label" data-i18n="navElsewhere">Elsewhere</p>
+          <ul class="nav nav--ext">
+            <li>
+              <a href="https://kunelab.duckdns.org" rel="noopener"
+                ><span class="nav__name" data-i18n="playGames">Play the games</span
+                ><span class="nav__ext" aria-hidden="true">↗</span></a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/Kunelab" rel="noopener"
+                ><span class="nav__name">GitHub</span
+                ><span class="nav__ext" aria-hidden="true">↗</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="rail__controls">
+          <div class="ctl">
+            <p class="rail__label" id="lang-label" data-i18n="language">
+              Language
+            </p>
+            <div class="seg" role="group" aria-labelledby="lang-label">
+              <button
+                type="button"
+                class="seg__btn"
+                data-lang="en"
+                aria-pressed="true"
+              >
+                EN
+              </button>
+              <button
+                type="button"
+                class="seg__btn"
+                data-lang="fr"
+                aria-pressed="false"
+              >
+                FR
+              </button>
+            </div>
+          </div>
+
+          <div class="ctl">
+            <p class="rail__label" id="theme-label" data-i18n="theme">Theme</p>
+            <div class="themes" role="group" aria-labelledby="theme-label">
+              <button
+                type="button"
+                class="swatch"
+                data-set-theme="console"
+                aria-pressed="true"
+              >
+                <span
+                  class="swatch__chip swatch__chip--console"
+                  aria-hidden="true"
+                ></span>
+                <span class="swatch__name">Console</span>
+              </button>
+              <button
+                type="button"
+                class="swatch"
+                data-set-theme="paper"
+                aria-pressed="false"
+              >
+                <span
+                  class="swatch__chip swatch__chip--paper"
+                  aria-hidden="true"
+                ></span>
+                <span class="swatch__name">Paper</span>
+              </button>
+              <button
+                type="button"
+                class="swatch"
+                data-set-theme="kune"
+                aria-pressed="false"
+              >
+                <span
+                  class="swatch__chip swatch__chip--kune"
+                  aria-hidden="true"
+                ></span>
+                <span class="swatch__name">Kune</span>
+              </button>
+              <button
+                type="button"
+                class="swatch"
+                data-set-theme="dusk"
+                aria-pressed="false"
+              >
+                <span
+                  class="swatch__chip swatch__chip--dusk"
+                  aria-hidden="true"
+                ></span>
+                <span class="swatch__name">Dusk</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main id="main" class="main">
+        <section class="hero" id="top">
+          <p class="hero__eyebrow">
+            <span data-i18n="heroEyebrow">Three projects</span>
+            <span class="hero__dot" aria-hidden="true">·</span>
+            <span data-i18n="heroEyebrow2">all self-hosted</span>
+          </p>
+
+          <div class="rsvp" aria-hidden="true">
+            <div class="rsvp__guide rsvp__guide--top"></div>
+            <div class="rsvp__word">
+              <span class="rsvp__pre"></span><span class="rsvp__orp"></span
+              ><span class="rsvp__post"></span>
+            </div>
+            <div class="rsvp__guide rsvp__guide--bottom"></div>
+          </div>
+
+          <h1 class="hero__title" data-i18n="heroTitle">
+            Small things that do one thing properly.
+          </h1>
+          <p class="hero__sub" data-i18n="heroSub">
+            A party game you play from the sofa, a reader that feeds you one
+            word at a time, and a phone that pretends to be a keyboard.
+          </p>
+        </section>
+
+        <article class="entry entry--kune" id="web-games">
+          <p class="entry__kind">
+            <span data-i18n="kuneKind">Web · party quizzes</span>
+          </p>
+          <h2 class="entry__title">KuneLab Web Games</h2>
+          <p class="entry__thesis" data-i18n="kuneThesis">
+            Party games for a room full of friends.
+          </p>
+          <div class="entry__body">
+            <p data-i18n="kuneDesc">
+              Add songs from a YouTube link, build playlists, then let everyone
+              race to name the track. Each player buzzes in from their own
+              phone, so the only screen that matters is the one already in the
+              room.
+            </p>
+            <ul class="feats">
+              <li data-i18n="kuneF1">Blind test with a live buzzer</li>
+              <li data-i18n="kuneF2">
+                Pixel puzzle: an image de-pixelates as they guess
+              </li>
+              <li data-i18n="kuneF3">Le Panel (in progress)</li>
+            </ul>
+          </div>
+          <dl class="spec">
+            <div>
+              <dt data-i18n="specPlatform">Platform</dt>
+              <dd data-i18n="kuneSpec1">Any browser</dd>
+            </div>
+            <div>
+              <dt data-i18n="specBuilt">Built with</dt>
+              <dd>React · Node · Socket.IO</dd>
+            </div>
+            <div>
+              <dt data-i18n="specStatus">Status</dt>
+              <dd>
+                <span class="dot dot--live" aria-hidden="true"></span
+                ><span data-i18n="kuneSpec3">Live, self-hosted</span>
+              </dd>
+            </div>
+          </dl>
+          <div class="entry__actions">
+            <a
+              class="btn btn--primary"
+              href="https://kunelab.duckdns.org"
+              rel="noopener"
+              ><span data-i18n="kuneCta">Play the games</span>
+              <span aria-hidden="true">↗</span></a
+            >
+            <a
+              class="btn"
+              href="https://github.com/Kunelab/web-games-front"
+              rel="noopener"
+              ><span data-i18n="sourceFront">Front</span>
+              <span aria-hidden="true">↗</span></a
+            >
+            <a
+              class="btn"
+              href="https://github.com/Kunelab/web-games-back"
+              rel="noopener"
+              ><span data-i18n="sourceBack">Back</span>
+              <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </article>
+
+        <article class="entry entry--reader" id="maxreader">
+          <p class="entry__kind">
+            <span data-i18n="readerKind">Android · reading</span>
+          </p>
+          <h2 class="entry__title">MaxReader</h2>
+          <p class="entry__thesis" data-i18n="readerThesis">
+            Read a book one word at a time.
+          </p>
+          <div class="entry__body">
+            <p data-i18n="readerDesc">
+              An EPUB reader built on RSVP: words appear one after another in
+              the same spot, so your eyes stop travelling across the line. The
+              optimal recognition point in each word is marked in red, the same
+              trick running in the headline above.
+            </p>
+            <ul class="feats">
+              <li data-i18n="readerF1">50 to 1500 words per minute</li>
+              <li data-i18n="readerF2">Pauses that lengthen on punctuation</li>
+              <li data-i18n="readerF3">
+                Dark and AMOLED themes, four languages
+              </li>
+            </ul>
+          </div>
+          <dl class="spec">
+            <div>
+              <dt data-i18n="specPlatform2">Platform</dt>
+              <dd>Android</dd>
+            </div>
+            <div>
+              <dt data-i18n="specBuilt2">Built with</dt>
+              <dd>Kotlin · Jetpack Compose</dd>
+            </div>
+            <div>
+              <dt data-i18n="specLicence">Licence</dt>
+              <dd>Apache-2.0</dd>
+            </div>
+          </dl>
+          <div class="entry__actions">
+            <a
+              class="btn btn--primary"
+              href="https://github.com/Kunelab/MaxReader"
+              rel="noopener"
+              ><span data-i18n="viewSource">View the source</span>
+              <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </article>
+
+        <article class="entry entry--kontroller" id="maxkontroller">
+          <p class="entry__kind">
+            <span data-i18n="kontrollerKind">Android · control</span>
+          </p>
+          <h2 class="entry__title">MaxKontroller</h2>
+          <p class="entry__thesis" data-i18n="kontrollerThesis">
+            Your phone is the keyboard and the mouse.
+          </p>
+          <div class="entry__body">
+            <p data-i18n="kontrollerDesc">
+              The phone registers itself as a Bluetooth HID device, so the PC,
+              Mac or TV sees a plain keyboard and mouse. Nothing to install on
+              the other end: no companion app, no driver, no dongle.
+            </p>
+            <ul class="feats">
+              <li data-i18n="kontrollerF1">
+                Trackpad with drag, scroll and double-tap
+              </li>
+              <li data-i18n="kontrollerF2">Gyroscope air mouse: tilt to aim</li>
+              <li data-i18n="kontrollerF3">
+                Media keys, and your clipboard typed across
+              </li>
+            </ul>
+          </div>
+          <dl class="spec">
+            <div>
+              <dt data-i18n="specPlatform3">Platform</dt>
+              <dd data-i18n="kontrollerSpec1">Android 9+ · any BT host</dd>
+            </div>
+            <div>
+              <dt data-i18n="specSize">Size</dt>
+              <dd>
+                <span class="num">330</span> KB<span
+                  class="spec__note"
+                  data-i18n="noDeps"
+                  >, no dependencies</span
+                >
+              </dd>
+            </div>
+            <div>
+              <dt data-i18n="specLicence2">Licence</dt>
+              <dd>Apache-2.0</dd>
+            </div>
+          </dl>
+          <div class="entry__actions">
+            <a
+              class="btn btn--primary"
+              href="https://github.com/Kunelab/MaxKontroller"
+              rel="noopener"
+              ><span data-i18n="viewSource2">View the source</span>
+              <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </article>
+
+        <footer class="foot">
+          <p data-i18n="footNote">
+            Everything here runs on a Debian box at home, behind Apache. No
+            trackers, no analytics.
+          </p>
+          <p class="foot__meta">
+            <a href="https://github.com/Kunelab" rel="noopener"
+              >github.com/Kunelab</a
+            >
+          </p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="assets/js/hub.js"></script>
+  </body>
+</html>
