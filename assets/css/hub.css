@@ -145,10 +145,10 @@ a{color:inherit}
   background:var(--sunk); overflow-y:auto;
 }
 .mark{display:grid; gap:.15rem; text-decoration:none}
+/* The logo brings its own black tile, so this no longer paints one. It also no
+   longer needs the display face: it was a text placeholder reading "KL". */
 .mark__glyph{
-  font-family:var(--display); font-weight:800; font-size:1.5rem; letter-spacing:-.05em;
-  color:var(--ground); background:var(--ink); width:2.4rem; height:2.4rem;
-  display:grid; place-items:center; margin-bottom:.6rem;
+  width:2.4rem; height:2.4rem; display:block; margin-bottom:.6rem;
 }
 .mark__name{font-family:var(--display); font-weight:700; font-size:1.0625rem; letter-spacing:-.02em}
 .mark__role{font-family:var(--mono); font-size:.6875rem; line-height:1.45; color:var(--ink-muted)}
