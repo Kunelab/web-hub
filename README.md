@@ -1,13 +1,13 @@
 # KuneLabHub
 
 The landing page that sits in front of everything: an index of the KuneLab projects, namely
-Web Games, MaxReader and MaxKontroller. No framework, no build step, no dependencies. Apache
+Web Games, KuneLab Reader and KuneLab Kontroller. No framework, no build step, no dependencies. Apache
 serves the folder as-is.
 
 ```
 index.html
 assets/css/hub.css     all styling + the four theme palettes
-assets/js/hub.js       language, theme, RSVP headline
+assets/js/hub.js       language, theme, the reader and kontroller demos
 assets/fonts/*.woff2   Archivo + IBM Plex Sans/Mono, self-hosted (216 KB)
 ```
 

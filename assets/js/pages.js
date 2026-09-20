@@ -65,7 +65,7 @@ window.HUB_COPY_EXTRA = {
       'Maxime Pinard is the data controller. For anything on this page, including exercising your rights: <a href="mailto:kunelabcontact@duck.com">kunelabcontact@duck.com</a>.',
     privWhatH: "What is collected, and why",
     privWhatLede:
-      "Only Web Games collects anything. The hub you are reading, MaxReader and MaxKontroller collect nothing at all.",
+      "Only Web Games collects anything. The hub you are reading, KuneLab Reader and KuneLab Kontroller collect nothing at all.",
     privAccountH: "Your account",
     privAccount:
       "Username, email address, and your password stored as an argon2id hash, which means the password itself is never kept and cannot be recovered. Plus the dates the account was created and last used. This exists so you can sign in and so a forgotten password can be reset. Legal basis: performance of the contract, article 6(1)(b).",
@@ -198,7 +198,7 @@ window.HUB_COPY_EXTRA = {
       'Maxime Pinard est le responsable de traitement. Pour tout ce qui figure sur cette page, y compris l’exercice de vos droits : <a href="mailto:kunelabcontact@duck.com">kunelabcontact@duck.com</a>.',
     privWhatH: "Ce qui est collecté, et pourquoi",
     privWhatLede:
-      "Seul Web Games collecte quelque chose. Le hub que vous lisez, MaxReader et MaxKontroller ne collectent rien du tout.",
+      "Seul Web Games collecte quelque chose. Le hub que vous lisez, KuneLab Reader et KuneLab Kontroller ne collectent rien du tout.",
     privAccountH: "Votre compte",
     privAccount:
       "Pseudo, adresse email, et votre mot de passe sous forme d’empreinte argon2id, ce qui signifie que le mot de passe lui-même n’est jamais conservé et ne peut pas être retrouvé. Plus les dates de création et de dernière connexion. Tout cela existe pour que vous puissiez vous connecter et réinitialiser un mot de passe oublié. Base légale : exécution du contrat, article 6.1.b.",

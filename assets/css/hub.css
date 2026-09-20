@@ -204,25 +204,6 @@ a{color:inherit}
 }
 .hero__dot{color:var(--focus)}
 
-/* RSVP display: the recognition point stays pinned to one x-position */
-.rsvp{
-  position:relative; height:5.5rem; margin-bottom:1.75rem;
-  max-width:min(38rem,100%); display:none; align-content:center; overflow:hidden;
-  transition:height .45s ease, margin-bottom .45s ease, opacity .3s ease;
-}
-.rsvp__guide{position:absolute; left:50%; width:1px; height:.6rem; background:var(--line);
-  transform:translateX(-.5px)}
-.rsvp__guide--top{top:0}
-.rsvp__guide--bottom{bottom:0}
-.rsvp__word{
-  display:flex; align-items:baseline; font-family:var(--mono); font-weight:500;
-  font-size:clamp(1.5rem,4.5vw,2.5rem); letter-spacing:-.01em;
-}
-.rsvp__pre{flex:1; text-align:right}
-.rsvp__post{flex:1; text-align:left}
-.rsvp__orp{color:var(--orp); font-weight:500}
-.rsvp[data-done="true"]{height:0; margin-bottom:0; opacity:0}
-
 .hero__title{font-size:var(--s4); max-width:19ch; margin-bottom:1.25rem}
 .hero__sub{font-size:var(--s2); color:var(--ink-muted); max-width:44ch; line-height:1.45}
 
@@ -269,6 +250,173 @@ a{color:inherit}
 .dot{width:.45rem; height:.45rem; border-radius:50%; background:var(--accent); flex:none}
 .dot--live{box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
 
+/* ---------- demos ----------
+   Two small machines that show instead of telling: the reader's RSVP loop and
+   the phone driving a screen it was never plugged into. Both run forever, so
+   both carry a pause control (WCAG 2.2.2) and both stop when out of view.
+   They inherit --accent from the entry around them. */
+.demo{border:1px solid var(--line); background:var(--surface); max-width:var(--measure)}
+.demo--pad{max-width:min(46rem,100%)}
+
+.demo__bar{
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  padding:.4rem .45rem .4rem .75rem; border-bottom:1px solid var(--line-soft);
+  font-family:var(--mono); font-size:.625rem; text-transform:uppercase;
+  letter-spacing:.14em; color:var(--ink-muted);
+}
+.demo__what{display:flex; align-items:center; gap:.5rem; min-width:0}
+.demo__led{
+  width:.4rem; height:.4rem; border-radius:50%; background:var(--accent); flex:none;
+  animation:demo-led 2.2s ease-in-out infinite;
+}
+.demo[data-paused="true"] .demo__led{animation:none; opacity:.3}
+@keyframes demo-led{0%,100%{opacity:1} 50%{opacity:.2}}
+.demo__val{color:var(--ink); letter-spacing:.1em; font-variant-numeric:tabular-nums}
+.demo__toggle{
+  flex:none; cursor:pointer; background:transparent; border:1px solid var(--line);
+  padding:.25rem .55rem; color:var(--ink-muted);
+  font-family:var(--mono); font-size:.625rem; text-transform:uppercase; letter-spacing:.14em;
+}
+.demo__toggle:hover{color:var(--accent); border-color:var(--accent)}
+.demo__foot{
+  padding:.55rem .75rem; border-top:1px solid var(--line-soft);
+  font-family:var(--mono); font-size:.6875rem; line-height:1.5; color:var(--ink-muted);
+}
+
+/* RSVP: the recognition point stays pinned to one x-position, as in the app */
+.rsvp{position:relative; height:6.5rem; display:grid; align-content:center;
+  overflow:hidden; padding:0 1rem}
+.rsvp__guide{position:absolute; left:50%; width:1px; height:.7rem; background:var(--line);
+  transform:translateX(-.5px)}
+.rsvp__guide--top{top:1rem}
+.rsvp__guide--bottom{bottom:1.3rem}
+.rsvp__word{
+  display:flex; align-items:baseline; font-family:var(--mono); font-weight:500;
+  font-size:clamp(1.4rem,4vw,2.1rem); letter-spacing:-.01em;
+}
+.rsvp__pre{flex:1; text-align:right}
+.rsvp__post{flex:1; text-align:left}
+.rsvp__orp{color:var(--orp); font-weight:500}
+.rsvp__rail{position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--line-soft)}
+.rsvp__fill{display:block; height:100%; width:0; background:var(--accent);
+  transition:width .2s linear}
+
+/* Kontroller: phone, radio, and a screen with nothing installed on it */
+.pad{
+  display:grid; grid-template-columns:10.5rem auto minmax(0,1fr);
+  align-items:center; gap:1rem; padding:1.1rem 1rem;
+}
+.pad__phone{
+  display:grid; gap:.4rem; padding:.45rem; background:var(--ground);
+  border:1px solid var(--line); border-radius:.8rem;
+}
+.pad__brow,.pad__bar{justify-self:center; background:var(--line); border-radius:1rem}
+.pad__brow{width:1.6rem; height:.2rem}
+.pad__bar{width:3rem; height:.2rem}
+
+/* Both faces share one grid cell, so swapping pad for keyboard is a crossfade
+   and not a reflow of everything below it. */
+.pad__faces{display:grid; aspect-ratio:3/4}
+.pad__face{
+  grid-area:1/1; position:relative; overflow:hidden;
+  border:1px solid var(--line-soft); background:var(--sunk);
+  opacity:0; visibility:hidden; transition:opacity .28s ease;
+}
+.pad__face[data-live="true"]{opacity:1; visibility:visible}
+.pad__hint{
+  position:absolute; left:.4rem; top:.35rem; font-family:var(--mono); font-size:.5rem;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-muted);
+}
+.pad__touch,.pad__ripple{
+  position:absolute; left:50%; top:50%; width:1.3rem; height:1.3rem;
+  margin:-.65rem 0 0 -.65rem; border-radius:50%; opacity:0;
+}
+.pad__touch{
+  background:color-mix(in srgb,var(--accent) 22%,transparent); border:1px solid var(--accent);
+  transition:opacity .16s ease, left .2s linear, top .2s linear;
+}
+.pad__touch[data-on="true"]{opacity:1}
+.pad__ripple{border:1px solid var(--accent)}
+.pad__ripple[data-tap="true"]{animation:pad-tap .45s ease-out}
+@keyframes pad-tap{from{transform:scale(.55); opacity:.9} to{transform:scale(2.4); opacity:0}}
+
+/* The keyboard slides up over the pad, as it does on the phone: the pad does
+   not go away, it dims behind the keys. */
+.pad__face--keys{background:transparent; border:0; opacity:1; visibility:visible}
+.pad__face[data-live="true"][data-dim="true"]{opacity:.3}
+.kbd{
+  position:absolute; left:0; right:0; bottom:0; display:grid; gap:.18rem;
+  padding:.3rem .2rem; background:var(--surface); border-top:1px solid var(--line);
+  transform:translateY(105%); transition:transform .3s ease;
+}
+.pad__face--keys[data-live="true"] .kbd{transform:none}
+.kbd__row{display:flex; gap:.14rem; justify-content:center}
+.kbd__row--mid{padding:0 .35rem}
+.kbd__row--last{margin-top:.1rem}
+.kbd__k{
+  flex:1 1 0; min-width:0; height:1rem; display:grid; place-items:center;
+  border:1px solid var(--line-soft); border-radius:.12rem; background:var(--surface);
+  font-family:var(--mono); font-size:.5rem; color:var(--ink-muted);
+  transition:background .12s ease, color .12s ease, border-color .12s ease;
+}
+.kbd__k--space{flex:5 1 0}
+.kbd__k--enter{flex:2 1 0}
+.kbd__k[data-hit="true"]{background:var(--accent); border-color:var(--accent); color:var(--ground)}
+
+.pad__link{
+  display:grid; justify-items:center; gap:.35rem; font-family:var(--mono);
+  font-size:.5rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-muted);
+}
+.pad__chip{border:1px solid var(--line); padding:.12rem .3rem}
+.pad__wire{display:flex; align-items:center; justify-content:center; gap:.25rem; width:3rem}
+.pad__wire i{width:.22rem; height:.22rem; border-radius:50%; background:var(--line);
+  animation:pad-flow 1.4s linear infinite}
+.pad__wire i:nth-child(2){animation-delay:.18s}
+.pad__wire i:nth-child(3){animation-delay:.36s}
+.demo[data-paused="true"] .pad__wire i{animation:none}
+@keyframes pad-flow{0%,100%{background:var(--line)} 40%{background:var(--accent)}}
+/* Which HID report is going out right now. Fixed width so it cannot jitter. */
+.pad__hid{width:4rem; min-height:.8rem; text-align:center; color:var(--accent)}
+
+.pad__screen{
+  min-width:0; aspect-ratio:16/10; background:var(--ground);
+  border:1px solid var(--line); display:grid; grid-template-rows:auto minmax(0,1fr);
+}
+.pad__chrome{display:flex; gap:.25rem; padding:.35rem .45rem;
+  border-bottom:1px solid var(--line-soft)}
+.pad__chrome i{width:.3rem; height:.3rem; border-radius:50%; background:var(--line)}
+.pad__desk{position:relative; overflow:hidden; padding:.9rem 1rem}
+.pad__search{
+  display:flex; align-items:center; gap:.4rem; height:1.5rem; padding:0 .55rem;
+  border:1px solid var(--line); border-radius:1rem; background:var(--surface);
+  font-family:var(--mono); font-size:.625rem; color:var(--ink);
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+.pad__search[data-focus="true"]{
+  border-color:var(--accent); box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 16%,transparent);
+}
+.pad__glass{width:.5rem; height:.5rem; border:1px solid var(--ink-muted); border-radius:50%;
+  flex:none}
+.pad__query{white-space:pre}
+.pad__caret{width:1px; height:.8rem; background:var(--accent); opacity:0}
+.pad__search[data-focus="true"] .pad__caret{animation:pad-caret 1s step-end infinite}
+.demo[data-paused="true"] .pad__caret{animation:none}
+@keyframes pad-caret{0%,50%{opacity:1} 50.01%,100%{opacity:0}}
+.pad__hits{
+  display:grid; gap:.45rem; margin-top:.7rem; opacity:0; transform:translateY(.3rem);
+  transition:opacity .3s ease, transform .3s ease;
+}
+.pad__hits[data-on="true"]{opacity:1; transform:none}
+.pad__hits i{display:block; height:.3rem; border-radius:1rem; background:var(--line)}
+.pad__hits li:nth-child(1) i{width:62%}
+.pad__hits li:nth-child(2) i{width:45%}
+.pad__hits li:nth-child(3) i{width:71%}
+.pad__cursor{
+  position:absolute; left:50%; top:50%; line-height:0; color:var(--ink);
+  transition:left .22s linear, top .22s linear;
+}
+.pad__cursor path{stroke:var(--ground)}
+
 .entry__actions{display:flex; flex-wrap:wrap; gap:.6rem; margin-top:.5rem}
 .btn{
   display:inline-flex; align-items:center; gap:.4rem; text-decoration:none;
@@ -308,6 +456,13 @@ a{color:inherit}
     align-items:start}
   .themes{grid-template-columns:repeat(2,minmax(0,1fr)); gap:.1rem .75rem}
   .hero{padding-top:3rem}
+}
+
+@media (max-width:44rem){
+  .pad{grid-template-columns:minmax(0,1fr); justify-items:center; gap:.8rem}
+  .pad__phone{width:9.5rem}
+  .pad__link{grid-auto-flow:column; align-items:center; gap:.55rem}
+  .pad__screen{width:100%}
 }
 
 @media (max-width:26rem){

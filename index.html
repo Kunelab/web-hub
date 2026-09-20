@@ -6,7 +6,7 @@
     <title>KuneLab: projects</title>
     <meta
       name="description"
-      content="Index of the projects built at KuneLab: Web Games party quizzes, the MaxReader RSVP reader, and the MaxKontroller Bluetooth remote."
+      content="Index of the projects built at KuneLab: Web Games party quizzes, the KuneLab Reader RSVP reader, and the KuneLab Kontroller Bluetooth remote."
     />
     <link rel="icon" type="image/svg+xml" href="assets/img/KuneLab.svg" />
     <link rel="stylesheet" href="assets/css/hub.css" />
@@ -41,16 +41,16 @@
               >
             </li>
             <li>
-              <a href="#maxreader"
-                ><span class="nav__name">MaxReader</span
+              <a href="#reader"
+                ><span class="nav__name">Reader</span
                 ><span class="nav__kind" data-i18n="kindAndroid"
                   >Android</span
                 ></a
               >
             </li>
             <li>
-              <a href="#maxkontroller"
-                ><span class="nav__name">MaxKontroller</span
+              <a href="#kontroller"
+                ><span class="nav__name">Kontroller</span
                 ><span class="nav__kind" data-i18n="kindAndroid2"
                   >Android</span
                 ></a
@@ -165,15 +165,6 @@
             <span data-i18n="heroEyebrow2">all self-hosted</span>
           </p>
 
-          <div class="rsvp" aria-hidden="true">
-            <div class="rsvp__guide rsvp__guide--top"></div>
-            <div class="rsvp__word">
-              <span class="rsvp__pre"></span><span class="rsvp__orp"></span
-              ><span class="rsvp__post"></span>
-            </div>
-            <div class="rsvp__guide rsvp__guide--bottom"></div>
-          </div>
-
           <h1 class="hero__title" data-i18n="heroTitle">
             Small things that do one thing properly.
           </h1>
@@ -234,11 +225,11 @@
           </div>
         </article>
 
-        <article class="entry entry--reader" id="maxreader">
+        <article class="entry entry--reader" id="reader">
           <p class="entry__kind">
             <span data-i18n="readerKind">Android · reading</span>
           </p>
-          <h2 class="entry__title">MaxReader</h2>
+          <h2 class="entry__title">KuneLab Reader</h2>
           <p class="entry__thesis" data-i18n="readerThesis">
             Read a book one word at a time.
           </p>
@@ -257,6 +248,37 @@
               </li>
             </ul>
           </div>
+
+          <div class="demo demo--reader" data-paused="false">
+            <div class="demo__bar">
+              <span class="demo__what">
+                <span class="demo__led" aria-hidden="true"></span>
+                <span data-i18n="demoReaderBar">RSVP, running</span>
+                <span class="demo__val" data-wpm aria-hidden="true"></span>
+              </span>
+              <button
+                type="button"
+                class="demo__toggle"
+                data-toggle="reader"
+                aria-pressed="false"
+              >
+                Pause
+              </button>
+            </div>
+            <div class="rsvp" aria-hidden="true">
+              <div class="rsvp__guide rsvp__guide--top"></div>
+              <div class="rsvp__word">
+                <span class="rsvp__pre"></span><span class="rsvp__orp"></span
+                ><span class="rsvp__post"></span>
+              </div>
+              <div class="rsvp__guide rsvp__guide--bottom"></div>
+              <div class="rsvp__rail"><span class="rsvp__fill"></span></div>
+            </div>
+            <p class="demo__foot" data-i18n="demoReaderNote">
+              The same engine as the app: one word, one fixation point.
+            </p>
+          </div>
+
           <dl class="spec">
             <div>
               <dt data-i18n="specPlatform2">Platform</dt>
@@ -282,11 +304,11 @@
           </div>
         </article>
 
-        <article class="entry entry--kontroller" id="maxkontroller">
+        <article class="entry entry--kontroller" id="kontroller">
           <p class="entry__kind">
             <span data-i18n="kontrollerKind">Android · control</span>
           </p>
-          <h2 class="entry__title">MaxKontroller</h2>
+          <h2 class="entry__title">KuneLab Kontroller</h2>
           <p class="entry__thesis" data-i18n="kontrollerThesis">
             Your phone is the keyboard and the mouse.
           </p>
@@ -306,6 +328,123 @@
               </li>
             </ul>
           </div>
+
+          <div class="demo demo--pad" data-paused="false">
+            <div class="demo__bar">
+              <span class="demo__what">
+                <span class="demo__led" aria-hidden="true"></span>
+                <span data-i18n="demoPadBar">Bluetooth HID, simulated</span>
+                <span class="demo__val" data-mode aria-hidden="true"></span>
+              </span>
+              <button
+                type="button"
+                class="demo__toggle"
+                data-toggle="pad"
+                aria-pressed="false"
+              >
+                Pause
+              </button>
+            </div>
+
+            <div class="pad" aria-hidden="true">
+              <div class="pad__phone">
+                <span class="pad__brow"></span>
+
+                <div class="pad__faces">
+                  <div class="pad__face" data-face="pad">
+                    <span class="pad__hint" data-i18n="demoPadHint">trackpad</span>
+                    <span class="pad__touch"></span>
+                    <span class="pad__ripple"></span>
+                  </div>
+
+                  <div class="pad__face pad__face--keys" data-face="keys">
+                    <div class="kbd">
+                      <div class="kbd__row">
+                        <span class="kbd__k" data-k="q">q</span
+                        ><span class="kbd__k" data-k="w">w</span
+                        ><span class="kbd__k" data-k="e">e</span
+                        ><span class="kbd__k" data-k="r">r</span
+                        ><span class="kbd__k" data-k="t">t</span
+                        ><span class="kbd__k" data-k="y">y</span
+                        ><span class="kbd__k" data-k="u">u</span
+                        ><span class="kbd__k" data-k="i">i</span
+                        ><span class="kbd__k" data-k="o">o</span
+                        ><span class="kbd__k" data-k="p">p</span>
+                      </div>
+                      <div class="kbd__row kbd__row--mid">
+                        <span class="kbd__k" data-k="a">a</span
+                        ><span class="kbd__k" data-k="s">s</span
+                        ><span class="kbd__k" data-k="d">d</span
+                        ><span class="kbd__k" data-k="f">f</span
+                        ><span class="kbd__k" data-k="g">g</span
+                        ><span class="kbd__k" data-k="h">h</span
+                        ><span class="kbd__k" data-k="j">j</span
+                        ><span class="kbd__k" data-k="k">k</span
+                        ><span class="kbd__k" data-k="l">l</span>
+                      </div>
+                      <div class="kbd__row">
+                        <span class="kbd__k kbd__k--mod">&#8679;</span
+                        ><span class="kbd__k" data-k="z">z</span
+                        ><span class="kbd__k" data-k="x">x</span
+                        ><span class="kbd__k" data-k="c">c</span
+                        ><span class="kbd__k" data-k="v">v</span
+                        ><span class="kbd__k" data-k="b">b</span
+                        ><span class="kbd__k" data-k="n">n</span
+                        ><span class="kbd__k" data-k="m">m</span
+                        ><span class="kbd__k kbd__k--mod">&#9003;</span>
+                      </div>
+                      <div class="kbd__row kbd__row--last">
+                        <span class="kbd__k kbd__k--space" data-k=" "></span
+                        ><span class="kbd__k kbd__k--enter" data-k="enter"
+                          >&#8629;</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <span class="pad__bar"></span>
+              </div>
+
+              <div class="pad__link">
+                <span class="pad__chip">BT</span>
+                <span class="pad__wire"><i></i><i></i><i></i></span>
+                <span class="pad__hid" data-hid></span>
+              </div>
+
+              <div class="pad__screen">
+                <div class="pad__chrome"><i></i><i></i><i></i></div>
+                <div class="pad__desk">
+                  <div class="pad__search">
+                    <span class="pad__glass"></span>
+                    <span class="pad__query"></span><span class="pad__caret"></span>
+                  </div>
+                  <ul class="pad__hits">
+                    <li><i></i></li>
+                    <li><i></i></li>
+                    <li><i></i></li>
+                  </ul>
+                  <span class="pad__cursor">
+                    <svg viewBox="0 0 12 16" width="12" height="16">
+                      <path
+                        d="M1 1 1 13 4.3 9.9 6.4 15 8.6 14 6.4 9.3 10.6 9z"
+                        fill="currentColor"
+                        stroke="var(--ground)"
+                        stroke-width="1"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <p class="demo__foot" data-i18n="demoPadNote">
+              Nothing runs on the far side: the screen sees a plain Bluetooth
+              keyboard and mouse.
+            </p>
+          </div>
+
           <dl class="spec">
             <div>
               <dt data-i18n="specPlatform3">Platform</dt>
