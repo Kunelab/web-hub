@@ -44,7 +44,10 @@
       specStatus: "Status", specLicence: "Licence", specLicence2: "Licence",
       specSize: "Size", noDeps: ", no dependencies",
       viewSource: "View the source", viewSource2: "View the source",
-      footNote: "Everything here runs on a Debian box at home, behind Apache. No trackers, no analytics."
+      footNote: "Everything here runs on a Debian box at home, behind Apache. No trackers, no analytics.",
+      backToHub: "KuneLab",
+      navAbout: "About", navBug: "Report a bug",
+      navPrivacy: "Privacy", navMentions: "Legal notice"
     },
     fr: {
       skip: "Aller au contenu",
@@ -85,7 +88,10 @@
       specStatus: "État", specLicence: "Licence", specLicence2: "Licence",
       specSize: "Taille", noDeps: ", aucune dépendance",
       viewSource: "Voir le code", viewSource2: "Voir le code",
-      footNote: "Tout ici tourne sur une machine Debian à la maison, derrière Apache. Aucun traceur, aucune mesure d'audience."
+      footNote: "Tout ici tourne sur une machine Debian à la maison, derrière Apache. Aucun traceur, aucune mesure d'audience.",
+      backToHub: "KuneLab",
+      navAbout: "À propos", navBug: "Signaler un bug",
+      navPrivacy: "Confidentialité", navMentions: "Mentions légales"
     }
   };
 
@@ -104,6 +110,16 @@
     lang = (navigator.language || "en").toLowerCase().indexOf("fr") === 0 ? "fr" : "en";
   }
 
+  /* The long-form pages (about, legal, privacy) keep their copy in pages.js so
+     this file stays about behaviour. It is loaded before this one and leaves the
+     strings here; merged rather than replaced so the rail and footer keep working. */
+  if (window.HUB_COPY_EXTRA) {
+    ["en", "fr"].forEach(function (code) {
+      var extra = window.HUB_COPY_EXTRA[code] || {};
+      Object.keys(extra).forEach(function (key) { COPY[code][key] = extra[key]; });
+    });
+  }
+
   function applyLang(next) {
     lang = next;
     var dict = COPY[next];
@@ -111,6 +127,14 @@
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var val = dict[el.getAttribute("data-i18n")];
       if (val) { el.textContent = val; }
+    });
+
+    /* Copy that contains a link or an <em>. innerHTML is safe here and only
+       here: every one of these strings is authored in pages.js and shipped with
+       the site. Nothing a visitor can influence ever reaches this. */
+    document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
+      var val = dict[el.getAttribute("data-i18n-html")];
+      if (val) { el.innerHTML = val; }
     });
     document.querySelectorAll("[data-lang]").forEach(function (btn) {
       btn.setAttribute("aria-pressed", String(btn.getAttribute("data-lang") === next));

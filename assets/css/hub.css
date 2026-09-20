@@ -290,6 +290,14 @@ a{color:inherit}
   border-bottom:1px solid var(--line)}
 .foot__meta a:hover{color:var(--focus); border-color:var(--focus)}
 
+/* The legal and contact links. Quiet, wrapping on a phone, and deliberately not
+   in the rail: nobody navigates to a privacy policy, they look for it at the
+   bottom of the page. */
+.foot__links{display:flex; flex-wrap:wrap; gap:.35rem 1.25rem; font-size:var(--s-1)}
+.foot__links a{color:var(--ink-muted); text-decoration:none}
+.foot__links a:hover,.foot__links a:focus-visible{color:var(--a-kune); text-decoration:underline;
+  text-underline-offset:2px}
+
 /* ---------- responsive ---------- */
 @media (max-width:60rem){
   .shell{grid-template-columns:minmax(0,1fr)}

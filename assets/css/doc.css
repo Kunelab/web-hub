@@ -1,0 +1,172 @@
+/* KuneLab hub: the long-form pages.
+   About, legal notice, privacy, report a bug. Loaded after hub.css and built on
+   its tokens, so all four themes work here with nothing extra.
+
+   A different shape from index.html on purpose: that page is a rail plus a
+   column of project cards, and these are one column of prose that has to be
+   readable end to end. No rail, a measure capped for reading, and a header thin
+   enough that the text starts near the top of the screen. */
+
+.doc {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 2rem var(--pad) 5rem;
+}
+
+/* ------------------------------------------------------------------ header */
+
+.doc__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.doc__home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--display);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.doc__home img {
+  width: 26px;
+  height: 26px;
+}
+
+.doc__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  font-size: var(--s-1);
+}
+
+.doc__nav a {
+  color: var(--ink-muted);
+}
+
+.doc__nav a:hover,
+.doc__nav a:focus-visible,
+.doc__nav a[aria-current="page"] {
+  color: var(--a-kune);
+}
+
+/* ------------------------------------------------------------------- prose */
+
+.doc h1 {
+  font-family: var(--display);
+  font-size: var(--s3);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+  color: var(--ink);
+}
+
+/* The one-sentence summary under the title. Larger than body text because on a
+   privacy page it is the part most people will read instead of the rest. */
+.doc__lede {
+  font-size: var(--s2);
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0 0 1rem;
+}
+
+.doc__meta {
+  font-size: var(--s-1);
+  color: var(--ink-muted);
+  margin: 0 0 3rem;
+}
+
+.doc h2 {
+  font-family: var(--display);
+  font-size: var(--s2);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 3rem 0 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.doc h3 {
+  font-size: var(--s1);
+  font-weight: 500;
+  margin: 1.75rem 0 0.4rem;
+  color: var(--ink);
+}
+
+.doc p,
+.doc li {
+  font-size: var(--s0);
+  line-height: 1.7;
+  color: var(--ink-muted);
+}
+
+.doc p {
+  margin: 0 0 1rem;
+}
+
+.doc a {
+  color: var(--a-kune);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.doc ul {
+  margin: 0 0 1rem;
+  padding-left: 1.1rem;
+}
+
+.doc li {
+  margin-bottom: 0.45rem;
+}
+
+/* A short aside qualifying the paragraph above it: the LCEN anonymity clause,
+   the translation notice. Quieter and set off, so it reads as a footnote rather
+   than as another claim. */
+.doc__note {
+  font-size: var(--s-1);
+  color: var(--ink-muted);
+  border-left: 2px solid var(--line);
+  padding-left: 0.9rem;
+  margin: 0 0 1rem;
+}
+
+/* ------------------------------------------------------------------ footer */
+
+.doc__foot {
+  margin-top: 4rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: var(--s-1);
+  color: var(--ink-muted);
+}
+
+.doc__foot nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+}
+
+.doc__foot a {
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+.doc__foot a:hover,
+.doc__foot a:focus-visible {
+  color: var(--a-kune);
+  text-decoration: underline;
+}
